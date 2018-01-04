@@ -1,5 +1,5 @@
 <?php
-require 'connection.php';
+require_once 'syssession.php';
 $error = '';
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {

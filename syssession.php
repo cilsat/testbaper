@@ -1,11 +1,12 @@
 <?php
+require 'connection.php';
 class SysSession implements SessionHandlerInterface
 {
     private $_link;
 
     public function open($savePath, $sessionName)
     {
-        $_link = mysqli_connect("localhost", "root", "root", "baper_test");
+        $_link = connect();
         if ($_link) {
             $this->link = $_link;
             return true;
@@ -57,4 +58,7 @@ class SysSession implements SessionHandlerInterface
         }
     }
 }
+$handler = new SysSession();
+session_set_save_handler($handler, true);
+session_start();
 ?>
