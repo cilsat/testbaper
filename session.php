@@ -1,6 +1,7 @@
 <?php
 require 'connection.php';
 session_start();
+$sessid = session_id();
 
 $user_check = $_SESSION['login_user'];
 $ses_sql = mysqli_query($con, "select username from login where username='$user_check'");

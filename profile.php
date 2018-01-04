@@ -18,6 +18,7 @@ require 'session.php';
     <div>&nbsp;</div>
 
     <?php
+    echo "<div>" . $sessid . "</div>";
     foreach ($_SESSION as $key => $val) {
         echo "<div>" . $key . ": " . $val . "</div>";
     }
