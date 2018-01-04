@@ -1,7 +1,9 @@
 <?php
 require 'login.php';
+echo "<div>".$_COOKIE['PHPSESSID']."</div>";
 if (isset($_SESSION['login_user'])) {
-    header("location: profile.php");
+    echo "<div>".session_id()."</div>";
+    //header("location: profile.php");
 }
 ?>
 <!DOCTYPE html>
