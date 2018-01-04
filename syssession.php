@@ -31,6 +31,8 @@ class SysSession implements SessionHandlerInterface
     }
     public function write($id, $data)
     {
+        echo "<div>".$id."</div>";
+        echo "<div>".$data."</div>";
         $DateTime = date('Y-m-d H:i:s');
         $NewDateTime = date('Y-m-d H:i:s', strtotime($DateTime.' + 1 hour'));
         $result = mysqli_query($this->link, "REPLACE INTO session SET id = '".$id."', expires = '".$NewDateTime."', data = '".$data."'");
@@ -62,4 +64,5 @@ class SysSession implements SessionHandlerInterface
 $handler = new SysSession();
 session_set_save_handler($handler, true);
 session_start();
+echo "<div>".$_COOKIE['PHPSESSID']."</div>";
 ?>

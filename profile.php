@@ -18,10 +18,6 @@ require 'session.php';
     <div>&nbsp;</div>
 
     <?php
-    echo "<div>".$_SESSION['sess_id']."</div>";
-    echo "<div>".session_id()."</div>";
-    echo "<div>".$_COOKIE['PHPSESSID']."</div>";
-
     $query = mysqli_query($con, "select * from login");
     $counter = 1;
 
