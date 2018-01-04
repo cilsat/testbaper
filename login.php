@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['sess_id'] = session_id();
             mysqli_free_result($query);
 
-            //header("location: profile.php");
+            header("location: profile.php");
             $error = $_SESSION['login_user'];
         } else {
             $error = "Username atau Password salah";
