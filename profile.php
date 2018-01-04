@@ -1,5 +1,5 @@
 <?php
-    require 'session.php';
+require 'session.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +18,11 @@
     <div>&nbsp;</div>
 
     <?php
-        $query = mysqli_query($con, "select * from login");
-        $counter = 1;
+    $query = mysqli_query($con, "select * from login");
+    $counter = 1;
 
-        echo "<table border='2px solid black'>";
-        echo "<tr><th>No.</th><th>Username</th><th>Action</th></tr>";
+    echo "<table border='2px solid black'>";
+    echo "<tr><th>No.</th><th>Username</th><th>Action</th></tr>";
     while ($row = mysqli_fetch_assoc($query)) {
         echo "<tr><td>" . $counter . "</td>";
         echo "<td>" . $row['username'] . "</td>";
