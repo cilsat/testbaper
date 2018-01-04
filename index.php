@@ -1,6 +1,6 @@
 <?php
 require 'login.php';
-if(isset($_SESSION['login_user'])) {
+if (isset($_SESSION['login_user'])) {
     header("location: profile.php");
 }
 ?>
