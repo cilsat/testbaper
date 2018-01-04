@@ -18,7 +18,7 @@ require 'session.php';
     <div>&nbsp;</div>
 
     <?php
-    echo "<div>".$_COOKIE['PHPSESSID']."</div>";
+    echo "<div>".$_SESSION['sess_id']."</div>";
     echo "<div>".session_id()."</div>";
 
     $query = mysqli_query($con, "select * from login");

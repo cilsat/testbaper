@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 
         if ($rows == 1) {
             $_SESSION['login_user'] = $username;
-            $_SESSION['sess_id'] = session_id();
+            $_SESSION['sess_id'] = $_COOKIE['PHPSESSID'];
             mysqli_free_result($query);
 
             header("location: profile.php");
