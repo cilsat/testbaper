@@ -18,7 +18,6 @@ require 'session.php';
     <div>&nbsp;</div>
 
     <?php
-    echo "<div>" . $sessid . "</div>";
     foreach ($_SESSION as $key => $val) {
         echo "<div>" . $key . ": " . $val . "</div>";
     }
@@ -34,8 +33,8 @@ require 'session.php';
         echo "<td><a href='edit.php?id=" . $row['id'] . "'><button>Edit</button></a> &nbsp;&nbsp;&nbsp; <a href='hapus.php?id=" . $row['id'] . "'><button>Hapus</button></a></tr>";
         $counter++;
     }
-        echo "</table>";
-        mysqli_close($con);
+    echo "</table>";
+    mysqli_close($con);
     ?>
 </body>
 </html>

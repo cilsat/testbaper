@@ -1,20 +1,21 @@
 <?php
-session_start();
+require 'connection.php';
 $error = '';
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
-        $error = "Username atau Password salah";
+        $error = "Username atau Password kosong";
     }
     else
     {
-        include 'connection.php';
         $username = mysqli_real_escape_string($con, stripslashes($_POST['username']));
-        $password = mysqli_real_escape_string($con, stripslashes(md5($_POST['username'])));
+        $password = mysqli_real_escape_string($con, stripslashes(md5($_POST['password'])));
+        $query = mysqli_query($con, "select * from login where password='" . $password . "' AND username='" . $username . "'");
+        $rows = mysqli_num_rows($query);
 
-        $query = mysqli_query($con, "select * from login where password='$password' AND username='$username'");
-        if ($query > 0) {
-            $rows = mysqli_num_rows($query);
+        if ($rows == 1) {
             $_SESSION['login_user'] = $username;
+            $_SESSION['sess_id'] = session_id();
+            mysqli_free_result($query);
             header("location: profile.php");
         } else {
             $error = "Username atau Password salah";
