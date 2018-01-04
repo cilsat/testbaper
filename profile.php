@@ -18,6 +18,10 @@ require 'session.php';
     <div>&nbsp;</div>
 
     <?php
+    foreach ($_SESSION as $key => $val) {
+        echo "<div>" . $key . ": " . $val . "</div>";
+    }
+
     $query = mysqli_query($con, "select * from login");
     $counter = 1;
 

@@ -7,10 +7,6 @@ $ses_sql = mysqli_query($con, "select username from login where username='$user_
 $row = mysqli_fetch_assoc($ses_sql);
 $login_session = $row['username'];
 
-foreach ($_SESSION as $key => $val) {
-    echo $key . ": " . $val;
-}
-
 if(!isset($login_session)) {
     header('location: index.php');
 }
