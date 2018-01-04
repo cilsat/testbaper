@@ -1,5 +1,6 @@
 <?php
 require 'connection.php';
+date_default_timezone_set('Asia/Jakarta');
 class SysSession implements SessionHandlerInterface
 {
     private $_link;
